@@ -35,9 +35,9 @@ body {
   position: absolute;
   width: 150px;
   height: 150px;
-  left: 40vw;
+  left: 33vw;
   top: -89px;
-  background: radial-gradient(circle, #ffe2aa 2px, transparent 3px);
+  background: radial-gradient(circle, #ffe2aa 1px, transparent 2px);
   background-size: 15px 15px;
   background-repeat: repeat;
   z-index: 100;
