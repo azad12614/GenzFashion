@@ -72,20 +72,20 @@
   </head>
   <body class="bg-white text-[var(--text)] overflow-x-hidden">
     <section
-      class="dots absolute w-[150px] h-[150px] left-[33vw] -top-[89px] z-100 hidden lg:block"
+      class="absolute w-[150px] h-[150px] left-[33vw] -top-[89px] z-100 hidden lg:block"
     ></section>
 
-    <section class="bg-[var(--primary)] w-screen">
+    <section class="bg-[var(--primary)] w-screen px-[4vw]">
       <header
         class="mx-auto max-w-[1168px] grid grid-cols-2 pt-[35px] px-4 lg:px-0 relative"
       >
         <section
-          class="logo flex gap-[10px] items-center font-['Montserrat'] text-[25px] font-bold"
+          class="flex gap-[10px] items-center font-['Montserrat'] text-[20px] sm:text-[25px] font-bold"
         >
           <img
             src="./icons/logo_icon.png"
             alt="Logo"
-            class="w-[56px] h-[40px]"
+            class="w-[50px] h-[35px] sm:w-[56px] sm:h-[40px]"
           />
           <p class="pt-[5px] text-[var(--secondary)]">
             <span class="text-[var(--btn-1)]">GenZ</span> Fashion
@@ -103,39 +103,35 @@
         <ul
           class="menu-content hidden lg:grid lg:grid-cols-4 gap-[30px] pt-[30px] pl-[80px] absolute lg:static top-[70px] right-0 w-full lg:w-auto bg-[var(--primary)] lg:bg-transparent shadow-lg lg:shadow-none flex-col lg:flex-row items-center lg:items-start py-4 lg:py-0 z-40"
         >
-          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
-            Home
-          </li>
-          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+          <li class="list-none font-medium text-center cursor-pointer">Home</li>
+          <li class="list-none font-medium text-center cursor-pointer">
             Product
           </li>
-          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+          <li class="list-none font-medium text-center cursor-pointer">
             About us
           </li>
-          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+          <li class="list-none font-medium text-center cursor-pointer">
             Contact us
           </li>
         </ul>
       </header>
 
       <section
-        class="hero-section mx-auto max-w-[1168px] pt-[64px] pb-[100px] px-4 lg:px-0 grid lg:grid-cols-[1fr_1.25fr] gap-8"
+        class="mx-auto max-w-[1168px] pt-[64px] pb-[100px] grid md:grid-cols-2 gap-8 items-center"
       >
-        <section
-          class="hero-text grid grid-rows-[auto_auto_auto] gap-1 h-auto lg:h-[400px] lg:pt-[64px]"
-        >
+        <section class="flex flex-col gap-4 text-center md:text-left">
           <h1
-            class="font-['Bebas_Neue'] text-[60px] lg:text-[92px] leading-tight uppercase text-[var(--secondary)]"
+            class="font-['Bebas_Neue'] text-[60px] lg:text-[92px] leading-[1.1] uppercase text-[var(--secondary)]"
           >
             <span class="text-[var(--accent)]">Be the Genz</span><br />
             of Winter
           </h1>
-          <p class="max-w-[520px] text-base">
+          <p class="max-w-[520px] text-base mx-auto lg:mx-0 text-[#3E3E3E]">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
-            consequatur.
+            consequatur. Lorem ipsum dolor sit amet.
           </p>
           <button
-            class="mt-4 flex flex-row items-center justify-evenly w-[170px] h-[60px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] border-none px-[33px] cursor-pointer"
+            class="mt-4 mx-auto md:mx-0 flex flex-row items-center justify-evenly w-[170px] h-[60px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] border-none px-[33px] cursor-pointer hover:opacity-90 transition-opacity"
           >
             <img
               src="./icons/shopping-cart 1.png"
@@ -145,6 +141,7 @@
             <p class="text-sm font-medium">BUY NOW</p>
           </button>
         </section>
+
         <img
           src="./images/model.png"
           alt="Model"
@@ -153,7 +150,7 @@
       </section>
     </section>
 
-    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-4">
+    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-[4vw]">
       <h1
         class="text-[var(--secondary)] font-['Bebas_Neue'] text-[36px] lg:text-[48px] mb-[21px] text-center lg:text-left uppercase"
       >
@@ -267,7 +264,7 @@
       </section>
     </section>
 
-    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-4">
+    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-[4vw]">
       <h1
         class="text-[var(--secondary)] font-['Bebas_Neue'] text-[36px] lg:text-[48px] mb-[21px] text-center lg:text-left uppercase"
       >
@@ -382,7 +379,7 @@
     </section>
 
     <section
-      class="mx-auto max-w-[1168px] pt-[31px] pb-[200px] px-4 grid lg:grid-cols-2 gap-6 items-center"
+      class="mx-auto max-w-[1168px] pt-[31px] pb-[200px] px-[4vw] grid lg:grid-cols-2 gap-6 items-center"
     >
       <section
         class="features-content flex flex-col gap-4 items-center lg:items-start order-2 lg:order-1"
