@@ -1,234 +1,447 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GenZ Fashion</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
-    <section class="dots"></section>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <section class="header-section">
-      <header>
-        <section class="logo">
-          <img src="./icons/logo_icon.png" alt="Logo of GenZ Fashion" />
-          <p><span>GenZ</span> Fashion</p>
+    <style>
+      :root {
+        --font-roboto: "Roboto", sans-serif;
+        --font-neve: "Bebas Neue", sans-serif;
+        --font-mon: "Montserrat", sans-serif;
+        --size-sm: 16px;
+        --size-md: 24px;
+        --size-lg: 36px;
+        --size-xl: 48px;
+        --size-2xl: 92px;
+        --primary: #fffbf0;
+        --secondary: #363958;
+        --accent: #fabe4c;
+        --text: #3e3e3e;
+        --btn-1: #a4bc46;
+        --btn-2: #85a019;
+        --bg: #f1f1f1;
+        --white: #ffffff;
+        --black: #000000;
+      }
+
+      body {
+        font-family: var(--font-roboto);
+      }
+
+      .dots {
+        background: radial-gradient(circle, #ffe2aa 1px, transparent 2px);
+        background-size: 15px 15px;
+      }
+
+      .menu-p {
+        position: relative;
+        width: 20px;
+        height: 2px;
+        background-color: #363958;
+      }
+      .menu-p::before,
+      .menu-p::after {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 100%;
+        right: 0;
+        background-color: #363958;
+        border-radius: 10px;
+      }
+      .menu-p::before {
+        top: -8px;
+      }
+      .menu-p::after {
+        bottom: -8px;
+      }
+
+      #menu-toggle:checked ~ .menu-content {
+        display: flex !important;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[var(--text)] overflow-x-hidden">
+    <section
+      class="dots absolute w-[150px] h-[150px] left-[33vw] -top-[89px] z-100 hidden lg:block"
+    ></section>
+
+    <section class="bg-[var(--primary)] w-screen">
+      <header
+        class="mx-auto max-w-[1168px] grid grid-cols-2 pt-[35px] px-4 lg:px-0 relative"
+      >
+        <section
+          class="logo flex gap-[10px] items-center font-['Montserrat'] text-[25px] font-bold"
+        >
+          <img
+            src="./icons/logo_icon.png"
+            alt="Logo"
+            class="w-[56px] h-[40px]"
+          />
+          <p class="pt-[5px] text-[var(--secondary)]">
+            <span class="text-[var(--btn-1)]">GenZ</span> Fashion
+          </p>
         </section>
-        <input type="checkbox" id="menu-toggle" style="display: none" />
-        <label for="menu-toggle" class="menu-label">
-          <menu>
-            <p></p>
-          </menu>
+
+        <input type="checkbox" id="menu-toggle" class="hidden" />
+        <label
+          for="menu-toggle"
+          class="lg:hidden justify-self-end self-center cursor-pointer z-50"
+        >
+          <div class="menu-p"></div>
         </label>
-        <ul class="menu-content">
-          <li>Home</li>
-          <li>Product</li>
-          <li>About us</li>
-          <li>Contact us</li>
+
+        <ul
+          class="menu-content hidden lg:grid lg:grid-cols-4 gap-[30px] pt-[30px] pl-[80px] absolute lg:static top-[70px] right-0 w-full lg:w-auto bg-[var(--primary)] lg:bg-transparent shadow-lg lg:shadow-none flex-col lg:flex-row items-center lg:items-start py-4 lg:py-0 z-40"
+        >
+          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+            Home
+          </li>
+          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+            Product
+          </li>
+          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+            About us
+          </li>
+          <li class="list-none font-medium text-right w-[78px] cursor-pointer">
+            Contact us
+          </li>
         </ul>
       </header>
 
-      <section class="hero-section">
-        <section class="hero-text">
-          <h1>
-            <span>Be the Genz</span><br />
+      <section
+        class="hero-section mx-auto max-w-[1168px] pt-[64px] pb-[100px] px-4 lg:px-0 grid lg:grid-cols-[1fr_1.25fr] gap-8"
+      >
+        <section
+          class="hero-text grid grid-rows-[auto_auto_auto] gap-1 h-auto lg:h-[400px] lg:pt-[64px]"
+        >
+          <h1
+            class="font-['Bebas_Neue'] text-[60px] lg:text-[92px] leading-tight uppercase text-[var(--secondary)]"
+          >
+            <span class="text-[var(--accent)]">Be the Genz</span><br />
             of Winter
           </h1>
-          <p>
+          <p class="max-w-[520px] text-base">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo,
             consequatur.
           </p>
-          <button>
-            <img src="./icons/shopping-cart 1.png" alt="shopping cart icon" />
-            <p>BUY NOW</p>
+          <button
+            class="mt-4 flex flex-row items-center justify-evenly w-[170px] h-[60px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] border-none px-[33px] cursor-pointer"
+          >
+            <img
+              src="./icons/shopping-cart 1.png"
+              alt="cart"
+              class="w-6 aspect-square"
+            />
+            <p class="text-sm font-medium">BUY NOW</p>
           </button>
         </section>
-        <img src="./images/model.png" alt="Image of a man in hero section" />
+        <img
+          src="./images/model.png"
+          alt="Model"
+          class="w-full max-w-[464px] aspect-square lg:justify-self-end mx-auto"
+        />
       </section>
     </section>
 
-    <section class="product-section">
-      <h1>W0MAN Jacket</h1>
-      <section class="product-grid">
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-1.png" alt="Yellow Coat Jacket " />
-          </section>
-          <section class="product-content">
-            <h1>Yellow Coat Jacket</h1>
-            <p>
+    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-4">
+      <h1
+        class="text-[var(--secondary)] font-['Bebas_Neue'] text-[36px] lg:text-[48px] mb-[21px] text-center lg:text-left uppercase"
+      >
+        W0MAN Jacket
+      </h1>
+      <section
+        class="flex flex-col lg:flex-row gap-[30px] justify-center items-center"
+      >
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-1.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Yellow Coat Jacket
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-2.png" alt="Ladies Jacket " />
-          </section>
-          <section class="product-content">
-            <h1>Ladies Jacket</h1>
-            <p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-2.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Ladies Jacket
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-3.png" alt="Woman Leather Jacket " />
-          </section>
-          <section class="product-content">
-            <h1>Woman Leather Jacket</h1>
-            <p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-3.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Woman Leather Jacket
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
 
-    <section class="product-section">
-      <h1>MAN JACKET</h1>
-      <section class="product-grid">
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-4.png" alt="Snowboard Jacket Mens" />
-          </section>
-          <section class="product-content">
-            <h1>Snowboard Jacket Mens</h1>
-            <p>
+    <section class="mx-auto max-w-[1168px] mt-[49px] mb-[99px] px-4">
+      <h1
+        class="text-[var(--secondary)] font-['Bebas_Neue'] text-[36px] lg:text-[48px] mb-[21px] text-center lg:text-left uppercase"
+      >
+        MAN JACKET
+      </h1>
+      <section
+        class="flex flex-col lg:flex-row gap-[30px] justify-center items-center"
+      >
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-4.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Snowboard Mens
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-5.png" alt="Man Leather Jackets" />
-          </section>
-          <section class="product-content">
-            <h1>Man Leather Jackets</h1>
-            <p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-5.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Man Leather Jackets
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
-        <section class="product-card">
-          <section class="card-img">
-            <img src="./images/jacket-6.png" alt="Man Casual Jackets" />
-          </section>
-          <section class="product-content">
-            <h1>Man Casual Jackets</h1>
-            <p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full max-w-[370px] h-auto lg:h-[550px] border border-[var(--bg)] rounded-[20px] p-[18px] pb-3 shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <div
+            class="bg-[var(--bg)] rounded-[20px] p-[22px_21px_12px_20px] h-[327px]"
+          >
+            <img
+              src="./images/jacket-6.png"
+              alt="Product"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="pt-[17px] flex flex-col gap-[13px]">
+            <h1 class="text-[var(--secondary)] text-2xl font-bold">
+              Man Casual Jackets
+            </h1>
+            <p class="text-sm">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat,
               amet.
             </p>
-            <section class="bottom-bar">
-              <span>$234</span>
-              <button>
-                <img
-                  src="./icons/shopping-cart 1.png"
-                  alt="shopping cart icon"
-                />
-                <p>BUY NOW</p>
+            <div class="flex flex-row justify-between items-center mt-auto">
+              <span
+                class="text-[36px] text-[var(--accent)] font-black font-['Roboto']"
+                >$234</span
+              >
+              <button
+                class="flex flex-row items-center justify-evenly w-[140px] h-[50px] bg-linear-to-b from-[var(--btn-1)] to-[var(--btn-2)] text-white rounded-[10px] px-4"
+              >
+                <img src="./icons/shopping-cart 1.png" class="w-5" />
+                <p class="text-xs">BUY NOW</p>
               </button>
-            </section>
-          </section>
-        </section>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
 
-    <section class="features-section">
-      <section class="features-content">
-        <section class="features-card">
-          <img src="./icons/house.png" alt="" />
-          <section class="features-details">
-            <h1>Find the Perfect Fit</h1>
-            <p>
+    <section
+      class="mx-auto max-w-[1168px] pt-[31px] pb-[200px] px-4 grid lg:grid-cols-2 gap-6 items-center"
+    >
+      <section
+        class="features-content flex flex-col gap-4 items-center lg:items-start order-2 lg:order-1"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full max-w-[489px] p-[20px_27px] border border-[var(--bg)] rounded-[20px] shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <img
+            src="./icons/house.png"
+            alt="house"
+            class="w-[84px] aspect-square"
+          />
+          <div class="flex flex-col gap-2 text-center md:text-left">
+            <h1 class="text-2xl font-bold text-[var(--secondary)]">
+              Find the Perfect Fit
+            </h1>
+            <p class="text-sm">
               Everybody is different, which is why we offer styles for every
               body.
             </p>
-          </section>
-        </section>
-        <section class="features-card">
-          <img src="./icons/box.png" alt="" />
-          <section class="features-details">
-            <h1>Free Exchanges</h1>
-            <p>One of the many reasons you can shop with peace of mind.</p>
-          </section>
-        </section>
-        <section class="features-card">
-          <img src="./icons/question.png" alt="" />
-          <section class="features-details">
-            <h1>Contact Our Seller</h1>
-            <p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full max-w-[489px] p-[20px_27px] border border-[var(--bg)] rounded-[20px] shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <img src="./icons/box.png" alt="box" class="w-[84px] aspect-square" />
+          <div class="flex flex-col gap-2 text-center md:text-left">
+            <h1 class="text-2xl font-bold text-[var(--secondary)]">
+              Free Exchanges
+            </h1>
+            <p class="text-sm">
+              One of the many reasons you can shop with peace of mind.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full max-w-[489px] p-[20px_27px] border border-[var(--bg)] rounded-[20px] shadow-[0px_5px_5px_#f1f1f1]"
+        >
+          <img
+            src="./icons/question.png"
+            alt="question"
+            class="w-[84px] aspect-square"
+          />
+          <div class="flex flex-col gap-2 text-center md:text-left">
+            <h1 class="text-2xl font-bold text-[var(--secondary)]">
+              Contact Our Seller
+            </h1>
+            <p class="text-sm">
               They are here to help you. That's quite literally what we pay them
               for.
             </p>
-          </section>
-        </section>
+          </div>
+        </div>
       </section>
-      <img src="./images/shopping.png" alt="shopping picture" />
+      <img
+        src="./images/shopping.png"
+        alt="shopping"
+        class="w-full max-w-[600px] h-auto mx-auto order-1 lg:order-2"
+      />
     </section>
   </body>
 </html>
