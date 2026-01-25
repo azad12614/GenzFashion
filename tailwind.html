@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TailwindCSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <nav
+      class="sticky top-0 w-screen z-50 bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200"
+    >
+      <div
+        class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-20 flex items-center content-center justify-between"
+      >
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-500 via-puple-500 to-pink-500 hover:rotate-12 transition-transform duration-300 rounded-xl items-center justify-center"
+          >
+            <div class="w-11 h-11 bg-white rounded-xl m-0.5 text-center p-1.5">
+              <span
+                class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                >T</span
+              >
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <h1
+              class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            >
+              Tailwind
+            </h1>
+            <p class="text-xs text-gray-500">CSS Framework</p>
+          </div>
+        </div>
+        <ul class="hidden lg:flex space-x-1">
+          <li class="px-4 py-2 text-gray-700 font-medium">
+            <a href="#hero">Home</a>
+          </li>
+          <li class="px-4 py-2 text-gray-700 font-medium">
+            <a href="#features">Features</a>
+          </li>
+          <li class="px-4 py-2 text-gray-700 font-medium">
+            <a href="#grid">Grid</a>
+          </li>
+          <li class="px-4 py-2 text-gray-700 font-medium">
+            <a href="#cards">Cards</a>
+          </li>
+          <li class="px-4 py-2 text-gray-700 font-medium">
+            <a href="#forms">Forms</a>
+          </li>
+        </ul>
+        <button
+          class="px-8 py-4 md:px-6 md:py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 hidden sm:block"
+        >
+          Get Started
+        </button>
+      </div>
+    </nav>
+    <section id="hero" class="relative overflow-hidden py-20 sm:py-32 px-4">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
+      ></div>
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"
+      ></div>
+
+      <div class="container mx-auto max-w-7xl relative lg:flex lg:gap-16">
+        <div class="flex-1 text-center lg:text-left space-y-8">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
+              ></span>
+            </span>
+            New Release Available
+          </div>
+          <h1
+            class="text-4xl sm:text-5xl lg:text-7xl md:leading-none font-extrabold text-gray-900 leading-tight lg:leading-none mx-auto"
+          >
+            Master
+            <span
+              class="bg-gradient-to-r from-blue-700 to-fuchsia-600 bg-clip-text text-transparent"
+            >
+              Tailwind CSS
+            </span>
+            with Examples
+          </h1>
+          <p
+            class="text-lg sm:text-xl leading-relaxed lg:leading-tight sm:leading-snug text-gray-500 max-w-2xl md:max-w-3xl mx-auto"
+          >
+            A comprehensive exercise covering all Tailwind CSS utilities
+            including layout, typography, colors, spacing, borders, effects, and
+            responsive design.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+          >
+            <a
+              href="#features"
+              class="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-2xl hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300"
+            >
+              <span class="flex items-center justify-center gap-2">
+                Explore Features
+                <svg
+                  class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </a>
+            <a
+              href="#cards"
+              class="px-8 py-4 bg-white text-gray-800 font-bold rounded-xl border-2 border-gray-300 hover:border-blue-600 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              View Examples
+            </a>
+          </div>
+          <div
+            class="flex flex-wrap justify-center lg:justify-start gap-8 pt-8"
+          >
+            <div>
+              <h1 class="text-3xl font-bold text-gray-900">100+</h1>
+              <p class="text-sm text-gray-500">Utility Classes</p>
+            </div>
+            <div>
+              <h1 class="text-3xl font-bold text-gray-900">20+</h1>
+              <p class="text-sm text-gray-500">Concepts</p>
+            </div>
+            <div>
+              <h1 class="text-3xl font-bold text-gray-900">∞</h1>
+              <p class="text-sm text-gray-500">Possibilities</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center mt-9">
+          <div class="relative w-full max-w-sm lg:max-w-lg">
+            <div
+              class="absolute top-0 lg:top-32 right-0 md:left-5 lg:left-3 w-48 h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-500"
+            ></div>
+            <div
+              class="absolute top-12 lg:top-44 left-0 md:left-40 lg:left-75 w-48 h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl shadow-2xl transform rotate-6 hover:rotate-0 transition-transform duration-500 delay-100"
+            ></div>
+            <div
+              class="relative mt-24 md:mt-35 lg:mt-60 w-full h-64 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl shadow-2xl flex items-center justify-center text-white text-6xl hover:scale-105 transition-transform duration-500"
+            >
+              💎
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="py-20 px-4 bg-white">
+      <div class="container mx-auto max-w-7xl">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+            Tailwind CSS
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+              >Features</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Every utility class you need to build modern, responsive websites
+          </p>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"
+          ></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-blue-100 border-1 border-gray-200 hover:border-blue-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              📐
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Layout & Spacing</h1>
+            <p class="text-sm text-gray-500">
+              Master container, flexbox, grid, padding, margin, gap, and width
+              utilities
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>Container
+                & Max-width
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>Flexbox &
+                Grid
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>Padding &
+                Margin
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-purple-100 border-1 border-gray-200 hover:border-purple-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              🎨
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Colors & Gradients</h1>
+            <p class="text-sm text-gray-500">
+              Extensive color palette with background, text, border colors, and
+              gradients
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-purple-500 rounded-full"></span
+                >Background Colors
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                Gradients & Opacity
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-purple-500 rounded-full"></span> Dark
+                Mode Support
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-green-100 border-1 border-gray-200 hover:border-green-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              🔤
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Typography</h1>
+            <p class="text-sm text-gray-500">
+              Complete typography system with fonts, sizes, weights, and spacing
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>Font
+                Sizes & Weights
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>Line
+                Height & Spacing
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>Text
+                Alignment
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-red-100 border-1 border-gray-200 hover:border-red-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              📱
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Responsive Design</h1>
+            <p class="text-sm text-gray-500">
+              Mobile-first responsive utilities with breakpoint modifiers
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-red-500 rounded-full"></span>sm, md, lg,
+                xl, 2xl
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-red-500 rounded-full"></span
+                >Mobile-First Approach
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-red-500 rounded-full"></span>Container
+                Queries
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-yellow-100 border-1 border-gray-200 hover:border-yellow-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              ✨
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">
+              Effects & Transforms
+            </h1>
+            <p class="text-sm text-gray-500">
+              Shadows, transitions, transforms, and animation utilities
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>Box
+                Shadows
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span
+                >Transitions & Transforms
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span
+                >Animations
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col gap-4 bg-gray-100 hover:bg-pink-100 border-1 border-gray-200 hover:border-pink-300 hover:-translate-y-1 rounded-2xl p-8 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300"
+            >
+              🔲
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Borders & Radius</h1>
+            <p class="text-sm text-gray-500">
+              Border width, color, style, and radius utilities
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-pink-500 rounded-full"></span> Border
+                Widths
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-pink-500 rounded-full"></span>Rounded
+                Corners
+              </li>
+              <li
+                class="text-sm text-gray-500 flex gap-2 items-center"
+                class="text-gray-600"
+              >
+                <span class="w-2 h-2 bg-pink-500 rounded-full"></span>Padding &
+                Margin
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="grid" class="py-20 px-4 bg-gray-100">
+      <div class="container mx-auto max-w-7xl">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+            Grid
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            >
+              Layouts</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Responsive grid systems with various column configurations
+          </p>
+          <!-- <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"
+          ></div> -->
+        </div>
+        <div class="flex flex-col gap-12">
+          <div class="flex flex-col gap-6">
+            <h1 class="font-bold text-2xl">
+              4 Column Grid (1-2-3-4 responsive)
+            </h1>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 font-bold text-4xl text-white text-center"
+            >
+              <div
+                class="bg-gradient-to-b from-blue-400 to-blue-500 w-full h-[160px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                1
+              </div>
+              <div
+                class="bg-gradient-to-b from-purple-400 to-purple-500 w-full h-[160px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                2
+              </div>
+              <div
+                class="bg-gradient-to-b from-pink-400 to-pink-500 w-full h-[160px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                3
+              </div>
+              <div
+                class="bg-gradient-to-b from-green-400 to-green-500 w-full h-[160px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                4
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6">
+            <h1 class="font-bold text-2xl">Asymmetric Grid (Col-span)</h1>
+            <div
+              class="grid grid-cols-1 md:grid-cols-3 gap-6 font-bold text-4xl text-white text-center"
+            >
+              <div
+                class="md:col-span-2 bg-gradient-to-b from-[#818CF8] to-[#4F46E5] w-full h-[256px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                Spans 2 Columns
+              </div>
+              <div
+                class="bg-gradient-to-b from-[#2DD4BF] to-[#0D9488] w-full h-[256px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                1 Column
+              </div>
+              <div
+                class="bg-gradient-to-b from-[#FB923C] to-[#EA580C] w-full h-[256px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                1 Column
+              </div>
+              <div
+                class="md:col-span-2 bg-gradient-to-b from-[#F87171] to-[#DC2626] w-full h-[256px] rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                Spans 2 Columns
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6">
+            <h1 class="font-bold text-2xl">Auto-fit Grid (Flexible columns)</h1>
+            <div
+              class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 font-bold text-base text-white text-center"
+            >
+              <div
+                class="bg-gradient-to-br from-[#22D3EE] to-[#0891B2] w-full h-[128px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                A
+              </div>
+              <div
+                class="bg-gradient-to-br from-[#38BDF8] to-[#0284C7] w-full h-[128px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                B
+              </div>
+              <div
+                class="bg-gradient-to-br from-[#A78BFA] to-[#7C3AED] w-full h-[128px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                C
+              </div>
+              <div
+                class="bg-gradient-to-br from-[#E879F9] to-[#C026D3] w-full h-[128px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                D
+              </div>
+              <div
+                class="bg-gradient-to-br from-[#FB7185] to-[#E11D48] w-full h-[128px] rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 content-center"
+              >
+                E
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cards" class="py-20 px-4 bg-white">
+      <div class="container mx-auto max-w-7xl">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+            Card
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+            >
+              Components</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Different card styles with hover effects and shadows
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="w-full h-[464px] rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="bg-gradient-to-br from-[#60A5FA] to-[#A855F7] h-[192px] content-center text-center"
+            >
+              🖼️
+            </div>
+            <div class="flex flex-col gap-2 px-6 py-6">
+              <span
+                class="py-1 px-3 mb-1 bg-blue-100 max-w-max rounded-full text-blue-800 font-bold"
+                >Design</span
+              >
+              <h1 class="text-[19.5px] font-bold">Image Card</h1>
+              <p class="mb-2 text-gray-500">
+                Card with image header, badge, title and description. Perfect
+                for blog posts.
+              </p>
+              <button
+                class="bg-blue-500 px-4 py-2 text-base text-white font-bold rounded-lg"
+              >
+                Read More
+              </button>
+            </div>
+          </div>
+          <div
+            class="w-full h-[464px] rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="relative bg-gradient-to-br from-[#A855F7] to-[#EC4899] h-[128px]"
+            >
+              <div
+                class="absolute top-1/2 left-[33%] lg:left-[40%] bg-gradient-to-br from-[#FACC15] to-[#F97316] w-[128px] h-[128px] rounded-full border-4 border-white text-2xl content-center text-center"
+              >
+                👤
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-4 px-auto py-20 text-center items-center"
+            >
+              <h1 class="text-2xl font-bold">John Doe</h1>
+              <p class="text-base text-gray-500">Web Developer</p>
+              <div class="flex gap-2">
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-full text-center content-center"
+                >
+                  📘
+                </div>
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-full text-center content-center"
+                >
+                  🐦
+                </div>
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-full text-center content-center"
+                >
+                  📷
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative w-full h-[464px] p-8 rounded-2xl shadow-lg hover:shadow-2xl border-2 border-[#22C55E] transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+          >
+            <span
+              class="absolute top-5 right-5 py-1 px-3 bg-[#22C55E] max-w-max rounded-full text-white text-xs font-semibold"
+              >POPULAR</span
+            >
+            <div class="flex flex-col gap-2 text-center">
+              <div
+                class="bg-gradient-to-br from-[#4ADE80] to-[#16A34A] h-[64px] w-[64px] mx-auto mb-2 rounded-xl content-center text-center"
+              >
+                💎
+              </div>
+              <h1 class="text-3xl font-bold">Pro Plan</h1>
+              <p class="text-gray-500">
+                <span class="text-4xl text-gray-900 font-bold">$29</span>/month
+              </p>
+            </div>
+            <ul class="my-6 flex flex-col gap-3">
+              <li class="text-gray-600">
+                <span class="text-green-400 pr-2">✓</span> Unlimited Projects
+              </li>
+              <li class="text-gray-600">
+                <span class="text-green-400 pr-2">✓</span> Priority Support
+              </li>
+              <li class="text-gray-600">
+                <span class="text-green-400 pr-2">✓</span> Advanced Analytics
+              </li>
+              <li class="text-gray-600">
+                <span class="text-green-400 pr-2">✓</span> Custom Domain
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-[#22C55E] to-[#16A34A] px-6 py-3 text-base font-bold text-white rounded-lg"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            class="group bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-white"
+          >
+            <div class="flex justify-between mb-6">
+              <h1 class="text-xl font-bold text-white">Total Users</h1>
+              <div
+                class="w-12 h-12 rounded-xl bg-purple-100/10 backdrop-blur-xs text-center content-center"
+              >
+                👥
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <h1 class="text-4xl text-white font-bold">12,456</h1>
+              <p class="text-white text-[10px] font-bold">
+                <span class="text-xs p-1.5 bg-purple-300/10 rounded-md"
+                  >+23%</span
+                >
+                vs last month
+              </p>
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+          >
+            <div class="flex gap-1 mb-4 text-amber-500 text-2xl">
+              <p>★</p>
+              <p>★</p>
+              <p>★</p>
+              <p>★</p>
+              <p>★</p>
+            </div>
+            <div class="flex flex-col gap-6">
+              <p
+                class="font-sm font-[400] text-gray-500 italic leading-relaxed"
+              >
+                "This Tailwind CSS exercise is absolutely amazing! It covers
+                everything I needed to learn. Highly recommended!"
+              </p>
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-[#F472B6] to-[#A855F7] rounded-full text-center content-center"
+                >
+                  😊
+                </div>
+                <div>
+                  <h1 class="text-base font-bold">Sarah Johnson</h1>
+                  <p class="text-base text-gray-500">Frontend Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-gray-200 hover:border-orange-500 transition-all duration-300 hover:-translate-y-2"
+          >
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg"
+            >
+              🚀
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Quick Features
+            </h3>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="text-2xl">⚡</span>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Lightning Fast</h4>
+                  <p class="text-sm text-gray-600">Optimized performance</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-2xl">🎯</span>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Highly Accurate</h4>
+                  <p class="text-sm text-gray-600">Precise results</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-2xl">🔒</span>
+                <div>
+                  <h4 class="font-semibold text-gray-900">Secure</h4>
+                  <p class="text-sm text-gray-600">Bank-level encryption</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="forms"
+      class="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="container mx-auto max-w-4xl">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+            Form
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+              >Elements</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600">
+            Beautiful form styling with focus states and validation
+          </p>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-200"
+        >
+          <div class="text-center mb-10">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl text-3xl mb-4 shadow-lg"
+            >
+              📝
+            </div>
+            <h3 class="text-3xl font-bold text-gray-900 mb-2">Contact Form</h3>
+            <p class="text-gray-600">
+              Fill out the form below with all field types
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your full name"
+                class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-200"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                placeholder="your.email@example.com"
+                class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-200"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Phone Number
+              </label>
+              <div class="relative">
+                <span
+                  class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  >📞</span
+                >
+                <input
+                  type="tel"
+                  placeholder="+1 (555) 000-0000"
+                  class="w-full pl-12 pr-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:border-green-500 focus:ring-4 focus:ring-green-500/20 outline-none transition-all duration-200"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Subject <span class="text-red-500">*</span>
+              </label>
+              <select
+                class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-gray-900 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20 outline-none transition-all duration-200 cursor-pointer"
+              >
+                <option>Select a subject</option>
+                <option>General Inquiry</option>
+                <option>Technical Support</option>
+                <option>Sales Question</option>
+                <option>Partnership Opportunity</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Message <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                rows="5"
+                placeholder="Write your message here..."
+                class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all duration-200 resize-none"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-3">
+                Preferred Contact Method
+              </label>
+              <div class="flex flex-wrap gap-4">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="contact"
+                    class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">Email</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="contact"
+                    class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">Phone</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="contact"
+                    class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">Text</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-3">
+                Interests (Select all that apply)
+              </label>
+              <div class="space-y-2">
+                <label
+                  class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <input
+                    type="checkbox"
+                    class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">Web Development</span>
+                </label>
+                <label
+                  class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <input
+                    type="checkbox"
+                    class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">Mobile Development</span>
+                </label>
+                <label
+                  class="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <input
+                    type="checkbox"
+                    class="w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-4 focus:ring-blue-500/20"
+                  />
+                  <span class="text-gray-700">UI/UX Design</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Attach File
+              </label>
+              <div
+                class="relative border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-blue-500 transition-colors cursor-pointer"
+              >
+                <input
+                  type="file"
+                  class="absolute inset-0 opacity-0 cursor-pointer"
+                />
+                <div class="text-4xl mb-2">📎</div>
+                <p class="text-sm text-gray-600">
+                  Click to upload or drag and drop
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  PNG, JPG, PDF up to 10MB
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-bold text-gray-700 mb-2">
+                Budget Range: <span class="text-blue-600">$5,000</span>
+              </label>
+              <input
+                type="range"
+                min="1000"
+                max="50000"
+                value="5000"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+              />
+              <div class="flex justify-between text-xs text-gray-500 mt-1">
+                <span>$1,000</span>
+                <span>$50,000</span>
+              </div>
+            </div>
+
+            <div
+              class="flex items-center justify-between p-4 bg-gray-50 rounded-xl"
+            >
+              <div>
+                <label class="font-bold text-gray-700"
+                  >Newsletter Subscription</label
+                >
+                <p class="text-sm text-gray-600">Receive updates and news</p>
+              </div>
+              <label class="relative inline-block w-14 h-8 cursor-pointer">
+                <input type="checkbox" class="sr-only peer" />
+                <div
+                  class="w-14 h-8 bg-gray-300 peer-focus:ring-4 peer-focus:ring-blue-500/20 rounded-full peer peer-checked:after:translate-x-6 peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-blue-600"
+                ></div>
+              </label>
+            </div>
+
+            <div class="p-4 bg-yellow-50 border-2 border-yellow-200 rounded-xl">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  class="w-5 h-5 mt-0.5 rounded border-gray-300 text-blue-600 focus:ring-4 focus:ring-blue-500/20"
+                />
+                <span class="text-sm text-gray-700">
+                  I agree to the
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-700 font-semibold"
+                    >Terms and Conditions</a
+                  >
+                  and
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-700 font-semibold"
+                    >Privacy Policy</a
+                  >
+                </span>
+              </label>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                class="flex-1 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+              >
+                Submit Form
+              </button>
+              <button
+                class="px-8 py-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-xl transition-colors duration-200"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
